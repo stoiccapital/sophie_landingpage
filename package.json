@@ -1,0 +1,19 @@
+{
+  "name": "saigon-soul",
+  "version": "1.0.0",
+  "description": "Modern website for Saigon Soul Vietnamese Restaurant",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.10"
+  }
+} 

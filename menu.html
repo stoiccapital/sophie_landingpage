@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speisekarte - Saigon Soul</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="/src/js/navigation.js" defer></script>
+</head>
+<body class="bg-secondary text-primary">
+    <!-- Navigation will be inserted here by navigation.js -->
+
+    <!-- Menu Content -->
+    <main class="pt-16">
+        <div class="text-center mb-0">
+            <h1 class="text-4xl font-bold font-inter mb-0">Speisekarte</h1>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" x-data="{ activeTab: 'vorspeisen' }">
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button @click="activeTab = 'vorspeisen'" 
+                        :class="{'bg-primary text-secondary': activeTab === 'vorspeisen'}"
+                        class="px-8 py-3 rounded-full transition relative">
+                    Vorspeisen
+                    <div x-show="activeTab === 'vorspeisen'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
+                </button>
+                <button @click="activeTab = 'suppen'"
+                        :class="{'bg-primary text-secondary': activeTab === 'suppen'}"
+                        class="px-8 py-3 rounded-full transition relative">
+                    Suppen
+                    <div x-show="activeTab === 'suppen'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
+                </button>
+                <button @click="activeTab = 'hauptgerichte'"
+                        :class="{'bg-primary text-secondary': activeTab === 'hauptgerichte'}"
+                        class="px-8 py-3 rounded-full transition relative">
+                    Hauptgerichte
+                    <div x-show="activeTab === 'hauptgerichte'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
+                </button>
+                <button @click="activeTab = 'vegetarisch'"
+                        :class="{'bg-primary text-secondary': activeTab === 'vegetarisch'}"
+                        class="px-8 py-3 rounded-full transition relative">
+                    Vegetarisch
+                    <div x-show="activeTab === 'vegetarisch'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
+                </button>
+                <button @click="activeTab = 'getranke'"
+                        :class="{'bg-primary text-secondary': activeTab === 'getranke'}"
+                        class="px-8 py-3 rounded-full transition relative">
+                    Getränke
+                    <div x-show="activeTab === 'getranke'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
+                </button>
+            </div>
+            <!-- Menu Items -->
+            <div class="space-y-8">
+                <!-- Vorspeisen -->
+                <div x-show="activeTab === 'vorspeisen'" class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/spring-rolls.jpg" alt="Frühlingsrollen" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Frühlingsrollen (2 Stück)</h3>
+                                <p class="text-gray-600">Mit Gemüse und Glasnudeln</p>
+                            </div>
+                            <span class="font-semibold">6,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/summer-rolls.jpg" alt="Sommerrollen" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Sommerrollen (2 Stück)</h3>
+                                <p class="text-gray-600">Mit Garnelen und frischen Kräutern</p>
+                            </div>
+                            <span class="font-semibold">7,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/banh-xeo.jpg" alt="Banh Xeo" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Banh Xeo</h3>
+                                <p class="text-gray-600">Kreppartige Pfannkuchen mit Garnelen und Schweinefleisch</p>
+                            </div>
+                            <span class="font-semibold">8,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/cha-gio.jpg" alt="Cha Gio" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Cha Gio</h3>
+                                <p class="text-gray-600">Frittierte Frühlingsrollen mit Schweinefleisch</p>
+                            </div>
+                            <span class="font-semibold">7,00 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/goi-cuon.jpg" alt="Goi Cuon" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Goi Cuon Tom</h3>
+                                <p class="text-gray-600">Reisrollen mit Garnelen und Schweinefleisch</p>
+                            </div>
+                            <span class="font-semibold">8,00 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suppen -->
+                <div x-show="activeTab === 'suppen'" class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/pho-bo.jpg" alt="Pho Bo" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Pho Bo</h3>
+                                <p class="text-gray-600">Rindfleischsuppe mit Reisnudeln</p>
+                            </div>
+                            <span class="font-semibold">12,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/pho-ga.jpg" alt="Pho Ga" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Pho Ga</h3>
+                                <p class="text-gray-600">Hühnersuppe mit Reisnudeln</p>
+                            </div>
+                            <span class="font-semibold">11,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/bun-bo-hue.jpg" alt="Bun Bo Hue" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Bun Bo Hue</h3>
+                                <p class="text-gray-600">Würzige Rindfleischsuppe mit Reisnudeln</p>
+                            </div>
+                            <span class="font-semibold">13,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/mi-vit-tiem.jpg" alt="Mi Vit Tiem" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Mi Vit Tiem</h3>
+                                <p class="text-gray-600">Entensuppe mit Eiernudeln</p>
+                            </div>
+                            <span class="font-semibold">12,00 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hauptgerichte -->
+                <div x-show="activeTab === 'hauptgerichte'" class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/com-tam.jpg" alt="Com Tam" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Com Tam</h3>
+                                <p class="text-gray-600">Gebrochener Reis mit gegrilltem Schweinefleisch</p>
+                            </div>
+                            <span class="font-semibold">13,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/bun-cha.jpg" alt="Bun Cha" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Bun Cha</h3>
+                                <p class="text-gray-600">Gegrillte Schweinefleischbällchen mit Reisnudeln</p>
+                            </div>
+                            <span class="font-semibold">13,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/com-ga-xoi-mo.jpg" alt="Com Ga Xoi Mo" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Com Ga Xoi Mo</h3>
+                                <p class="text-gray-600">Hähnchen mit klebrigem Reis</p>
+                            </div>
+                            <span class="font-semibold">12,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/ca-kho-to.jpg" alt="Ca Kho To" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Ca Kho To</h3>
+                                <p class="text-gray-600">Geschmorter Fisch in Karamellsauce</p>
+                            </div>
+                            <span class="font-semibold">14,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/bo-luc-lac.jpg" alt="Bo Luc Lac" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Bo Luc Lac</h3>
+                                <p class="text-gray-600">Gewürfeltes Rindfleisch mit Pfeffersauce</p>
+                            </div>
+                            <span class="font-semibold">15,50 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vegetarisch -->
+                <div x-show="activeTab === 'vegetarisch'" class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/com-chay.jpg" alt="Com Chay" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Com Chay</h3>
+                                <p class="text-gray-600">Vegetarischer Reis mit Tofu und Gemüse</p>
+                            </div>
+                            <span class="font-semibold">11,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/bun-chay.jpg" alt="Bun Chay" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Bun Chay</h3>
+                                <p class="text-gray-600">Vegetarische Reisnudeln mit Tofu</p>
+                            </div>
+                            <span class="font-semibold">11,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/rau-xao.jpg" alt="Rau Xao" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Rau Xao</h3>
+                                <p class="text-gray-600">Geschmortes Gemüse mit Tofu</p>
+                            </div>
+                            <span class="font-semibold">10,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/canh-chua-chay.jpg" alt="Canh Chua Chay" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Canh Chua Chay</h3>
+                                <p class="text-gray-600">Vegetarische saure Suppe</p>
+                            </div>
+                            <span class="font-semibold">9,50 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Getränke -->
+                <div x-show="activeTab === 'getranke'" class="grid md:grid-cols-2 gap-8">
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/vietnamese-coffee.jpg" alt="Vietnamesischer Kaffee" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Vietnamesischer Kaffee</h3>
+                                <p class="text-gray-600">Mit Kondensmilch</p>
+                            </div>
+                            <span class="font-semibold">3,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/green-tea.jpg" alt="Grüner Tee" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Grüner Tee</h3>
+                                <p class="text-gray-600">Frisch aufgebrüht</p>
+                            </div>
+                            <span class="font-semibold">2,50 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/orange-juice.jpg" alt="Nuoc Cam" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Nuoc Cam</h3>
+                                <p class="text-gray-600">Frischer Orangensaft</p>
+                            </div>
+                            <span class="font-semibold">3,00 €</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+                        <img src="/images/menu/iced-tea.jpg" alt="Tra Da" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold">Tra Da</h3>
+                                <p class="text-gray-600">Eistee</p>
+                            </div>
+                            <span class="font-semibold">2,00 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-secondary py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Address -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Saigon Soul</h3>
+                    <p class="mb-2">Musterstraße 123</p>
+                    <p class="mb-2">10115 Berlin</p>
+                    <p class="mb-2">Deutschland</p>
+                    <p class="mt-4">Tel: +49 30 1234567</p>
+                    <p>E-Mail: info@saigonsoul.de</p>
+                </div>
+
+                <!-- Map -->
+                <div class="h-[300px]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.409748305931!2d13.404954315807266!3d52.52000897981383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin!5e0!3m2!1sde!2sde!4v1647881234567!5m2!1sde!2sde"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        class="rounded-lg shadow-lg">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Legal Links -->
+            <div class="border-t border-gray-700 pt-4">
+                <div class="flex space-x-6">
+                    <a href="/impressum.html" class="hover:text-gray-300 transition">Impressum</a>
+                    <a href="/datenschutz.html" class="hover:text-gray-300 transition">Datenschutz</a>
+                    <a href="/agb.html" class="hover:text-gray-300 transition">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

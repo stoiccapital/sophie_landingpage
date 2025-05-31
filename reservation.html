@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservierung - Saigon Soul</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/src/js/navigation.js" defer></script>
+</head>
+<body class="bg-secondary text-primary">
+    <!-- Navigation will be inserted here by navigation.js -->
+
+    <main class="pt-16">
+        <section class="bg-white text-primary py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold font-inter mb-4">Tisch reservieren</h1>
+                    <p class="text-lg">Reservieren Sie bequem online – wir freuen uns auf Ihren Besuch!</p>
+                </div>
+
+                <!-- Reservation Form -->
+                <div class="w-full flex justify-center">
+                    <form style="width:400px;" class="space-y-4 bg-white p-4">
+                        <!-- Name Fields -->
+                        <div>
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Vorname *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    required 
+                                    class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                                >
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Nachname *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    required 
+                                    class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-Mail *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon *</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                required 
+                                class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                            >
+                        </div>
+
+                        <!-- Reservation Details -->
+                        <div class="space-y-2">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Datum *</label>
+                                <input 
+                                    type="date" 
+                                    id="date" 
+                                    name="date" 
+                                    required 
+                                    class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                                >
+                            </div>
+                            <div>
+                                <label for="time" class="block text-sm font-medium text-gray-700 mb-1">Uhrzeit *</label>
+                                <input 
+                                    type="time" 
+                                    id="time" 
+                                    name="time" 
+                                    required 
+                                    class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Gäste *</label>
+                            <select 
+                                id="guests" 
+                                name="guests" 
+                                required 
+                                class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                            >
+                                <option value="">Bitte wählen</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 Personen</option>
+                                <option value="3">3 Personen</option>
+                                <option value="4">4 Personen</option>
+                                <option value="5">5 Personen</option>
+                                <option value="6">6 Personen</option>
+                                <option value="7">7 Personen</option>
+                                <option value="8">8 Personen</option>
+                                <option value="9">9 Personen</option>
+                                <option value="10">10 Personen</option>
+                            </select>
+                        </div>
+
+                        <!-- Special Requests -->
+                        <div>
+                            <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Wünsche</label>
+                            <textarea 
+                                id="notes" 
+                                name="notes" 
+                                rows="1" 
+                                class="w-full bg-gray-50 border-2 border-gray-300 rounded-full p-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-center align-middle"
+                                placeholder="z.B. Allergien, Tischwunsch"
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button 
+                            type="submit" 
+                            class="w-full bg-primary text-secondary py-2 px-4 rounded-full text-sm font-medium hover:bg-opacity-90 transition duration-300"
+                        >
+                            Reservieren
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Alternative -->
+                <div class="mt-8 text-center text-sm">
+                    <p>Oder rufen Sie uns an unter: 030 12345678</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-secondary py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Address -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Saigon Soul</h3>
+                    <p class="mb-2">Musterstraße 123</p>
+                    <p class="mb-2">10115 Berlin</p>
+                    <p class="mb-2">Deutschland</p>
+                    <p class="mt-4">Tel: +49 30 1234567</p>
+                    <p>E-Mail: info@saigonsoul.de</p>
+                </div>
+
+                <!-- Map -->
+                <div class="h-[300px]">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.409748305931!2d13.404954315807266!3d52.52000897981383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin!5e0!3m2!1sde!2sde!4v1647881234567!5m2!1sde!2sde"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        class="rounded-lg shadow-lg">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Legal Links -->
+            <div class="border-t border-gray-700 pt-4">
+                <div class="flex space-x-6">
+                    <a href="/impressum.html" class="hover:text-gray-300 transition">Impressum</a>
+                    <a href="/datenschutz.html" class="hover:text-gray-300 transition">Datenschutz</a>
+                    <a href="/agb.html" class="hover:text-gray-300 transition">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
