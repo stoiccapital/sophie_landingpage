@@ -2,34 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
-html {
+@layer base {
+  html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter;
+  }
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-}
+@layer components {
+  .btn {
+    @apply px-8 py-3 rounded-full font-semibold transition;
+  }
 
-/* Smooth transitions */
-.transition {
-    transition: all 0.3s ease-in-out;
+  .btn-primary {
+    @apply bg-primary text-secondary hover:bg-opacity-90;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-secondary border-2 border-secondary hover:bg-secondary hover:text-primary;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
+  background: #888;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 } 

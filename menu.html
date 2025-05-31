@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/src/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="/src/js/navigation.js" defer></script>
+    <script src="/src/js/navigation.js" type="module"></script>
 </head>
 <body class="bg-secondary text-primary">
     <!-- Navigation will be inserted here by navigation.js -->
@@ -24,31 +24,26 @@
                         :class="{'bg-primary text-secondary': activeTab === 'vorspeisen'}"
                         class="px-8 py-3 rounded-full transition relative">
                     Vorspeisen
-                    <div x-show="activeTab === 'vorspeisen'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
                 </button>
                 <button @click="activeTab = 'suppen'"
                         :class="{'bg-primary text-secondary': activeTab === 'suppen'}"
                         class="px-8 py-3 rounded-full transition relative">
                     Suppen
-                    <div x-show="activeTab === 'suppen'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
                 </button>
                 <button @click="activeTab = 'hauptgerichte'"
                         :class="{'bg-primary text-secondary': activeTab === 'hauptgerichte'}"
                         class="px-8 py-3 rounded-full transition relative">
                     Hauptgerichte
-                    <div x-show="activeTab === 'hauptgerichte'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
                 </button>
                 <button @click="activeTab = 'vegetarisch'"
                         :class="{'bg-primary text-secondary': activeTab === 'vegetarisch'}"
                         class="px-8 py-3 rounded-full transition relative">
                     Vegetarisch
-                    <div x-show="activeTab === 'vegetarisch'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
                 </button>
                 <button @click="activeTab = 'getranke'"
                         :class="{'bg-primary text-secondary': activeTab === 'getranke'}"
                         class="px-8 py-3 rounded-full transition relative">
                     Getränke
-                    <div x-show="activeTab === 'getranke'" class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-full"></div>
                 </button>
             </div>
             <!-- Menu Items -->

@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./**/*.{html,js}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        'primary': '#000000',
-        'secondary': '#FFFFFF',
+        primary: '#1a1a1a',
+        secondary: '#ffffff',
         'gray': {
           100: '#F5F5F5',
           200: '#EEEEEE',
@@ -22,7 +22,8 @@ export default {
         },
       },
       fontFamily: {
-        'sans': ['Inter', 'Poppins', 'Open Sans', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
       },
     },
   },
