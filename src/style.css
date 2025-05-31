@@ -14,15 +14,28 @@
 
 @layer components {
   .btn {
-    @apply px-8 py-3 rounded-full font-semibold transition;
+    @apply px-8 py-3 rounded-full font-semibold transition-all duration-300 relative;
+  }
+
+  .btn::after {
+    content: '';
+    @apply absolute -inset-2 border-2 border-secondary rounded-full opacity-0 transition-all duration-300;
+  }
+
+  .btn:hover::after {
+    @apply opacity-100;
+  }
+
+  .btn span {
+    @apply relative z-10;
   }
 
   .btn-primary {
-    @apply bg-primary text-secondary hover:bg-opacity-90;
+    @apply bg-primary text-secondary;
   }
 
   .btn-secondary {
-    @apply bg-transparent text-secondary border-2 border-secondary hover:bg-secondary hover:text-primary;
+    @apply bg-transparent text-secondary;
   }
 }
 
